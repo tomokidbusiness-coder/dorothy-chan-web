@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>チームドロシー｜墨田区のリアルイベント</title>
+<meta name="description" content="墨田区で親子イベントや対談を開く「チームドロシー」。無いなら作ればいい。ただの主婦の挑戦です。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1c2547; --ink-soft:#4a5377;
+  --apple:#d9304a; --sprout:#7cbf3b; --sun:#ffc83d;
+  --paper:#f4f7fc; --white:#fff; --line:#d9e0ee;
+}
+@media (prefers-color-scheme: dark){
+  :root{--paper:#121833;--white:#1b2349;--ink:#eef1fb;--ink-soft:#b5bcd8;--line:#2d3665}
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font-family:"Zen Maru Gothic",system-ui,sans-serif;font-weight:500;color:var(--ink);background:var(--paper);line-height:1.9;font-size:17px;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--apple);outline-offset:3px;border-radius:6px}
+.wrap{width:min(100% - 40px,880px);margin-inline:auto}
+h2{font-weight:900;font-size:clamp(24px,4.5vw,32px);line-height:1.4;margin-bottom:24px}
+section{padding:80px 0}
+p+p{margin-top:1.1em}
+
+/* ---------- ナビ ---------- */
+nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0;font-weight:900}
+nav .logo{text-decoration:none;font-size:18px}
+nav ul{list-style:none;padding:0;display:flex;gap:22px;font-weight:700;font-size:14px}
+nav a{text-decoration:none}
+nav ul a:hover{color:var(--apple)}
+@media (max-width:560px){nav ul li:not(:last-child){display:none}}
+
+/* ---------- ヒーロー:縦書きの一行 ---------- */
+.hero{padding:20px 0 90px;position:relative}
+.hero .grid{display:grid;grid-template-columns:1fr auto;gap:30px;align-items:start}
+.vert{
+  writing-mode:vertical-rl;font-weight:900;
+  font-size:clamp(40px,9vw,92px);line-height:1.25;letter-spacing:.04em;
+  justify-self:end;white-space:nowrap;
+}
+.vert span{display:block}
+.vert .lined{background:linear-gradient(transparent 62%,var(--sun) 62% 92%,transparent 92%);padding:0 .06em}
+.hero .side{padding-top:14px;max-width:360px}
+.hero .side p{font-weight:700;color:var(--ink-soft)}
+.hero .tag{display:inline-block;background:var(--apple);color:#fff;font-weight:900;font-size:14px;padding:2px 16px;border-radius:99px;margin-bottom:16px}
+.hero .where{margin-top:22px;font-weight:900;font-size:15px}
+.sprout{position:absolute;right:2%;bottom:30px;font-size:36px;animation:sway 3.2s ease-in-out 2;transform-origin:50% 100%}
+@keyframes sway{50%{transform:rotate(7deg)}}
+@media (max-width:620px){.hero .grid{grid-template-columns:1fr}.vert{justify-self:start;order:-1}}
+
+/* ---------- 次回イベント ---------- */
+.next{background:var(--ink);color:#fff}
+.next a.card{
+  display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center;
+  background:#fff;color:#1c2547;text-decoration:none;border-radius:22px;padding:26px 30px;margin-top:6px;
+  transition:transform .15s;
+}
+.next a.card:hover{transform:translateY(-3px)}
+.date{text-align:center;border-right:3px dashed #c9d1e6;padding-right:28px}
+.date .m{font-weight:900;color:var(--apple);font-size:18px;line-height:1}
+.date .d{font-weight:900;font-size:60px;line-height:1.1}
+.date .w{display:inline-block;font-weight:900;font-size:14px;background:var(--sun);border-radius:99px;padding:0 12px}
+.card h3{font-weight:900;font-size:clamp(19px,3.4vw,25px);line-height:1.5}
+.card p{font-weight:700;font-size:14px;color:#4a5377;margin-top:6px}
+.card .go{display:inline-block;margin-top:10px;font-weight:900;color:var(--apple)}
+@media (max-width:560px){.next a.card{grid-template-columns:1fr}.date{border:0;border-bottom:3px dashed #c9d1e6;padding:0 0 18px}}
+
+/* ---------- 想い ---------- */
+.about .cols{display:grid;grid-template-columns:5fr 4fr;gap:44px}
+.about .big{font-weight:900;font-size:clamp(22px,3.6vw,28px);line-height:1.6}
+.facts{display:grid;gap:14px;align-content:start}
+.facts div{background:var(--white);border:2px solid var(--line);border-radius:16px;padding:14px 20px;font-weight:700}
+.facts small{display:block;color:var(--ink-soft);font-size:13px}
+@media (max-width:700px){.about .cols{grid-template-columns:1fr;gap:28px}}
+
+/* ---------- これまで ---------- */
+.log{background:var(--white)}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.chips span{background:var(--paper);border:2px solid var(--line);border-radius:99px;padding:2px 18px;font-weight:700}
+.chips span.first{background:var(--sprout);border-color:var(--sprout);color:#10240a;font-weight:900}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:30px}
+.gallery div{aspect-ratio:4/3;border-radius:16px;border:2px dashed var(--ink-soft);
+  background:repeating-linear-gradient(45deg,var(--line) 0 10px,transparent 10px 20px);
+  display:grid;place-items:center;font-size:12px;font-weight:700;color:var(--ink-soft);text-align:center;padding:8px}
+@media (max-width:560px){.gallery{grid-template-columns:1fr 1fr}.gallery div:last-child{display:none}}
+
+/* ---------- 一緒につくる ---------- */
+.join .opts{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:8px}
+.join .opt{background:var(--white);border:2px solid var(--line);border-radius:20px;padding:22px}
+.join .opt b{display:block;font-weight:900;font-size:19px;margin-bottom:6px}
+.join .opt p{font-size:15px;color:var(--ink-soft);font-weight:700;line-height:1.8}
+@media (max-width:700px){.join .opts{grid-template-columns:1fr}}
+
+/* ---------- 問い合わせ ---------- */
+.contact{background:var(--sun);color:#1c2547;text-align:center}
+.contact h2{margin-bottom:12px}
+.btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:26px}
+.btn{display:inline-block;background:#1c2547;color:#fff;text-decoration:none;font-weight:900;padding:14px 30px;border-radius:99px;box-shadow:0 5px 0 #0a0f26;transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translateY(2px);box-shadow:0 3px 0 #0a0f26}
+.btn.alt{background:#fff;color:#1c2547;box-shadow:0 5px 0 #b9922a}
+
+footer{padding:36px 0 44px;text-align:center;font-weight:700;font-size:14px;color:var(--ink-soft)}
+footer .links{display:flex;justify-content:center;gap:22px;margin-bottom:14px}
+@media (prefers-reduced-motion:reduce){.sprout{animation:none}html{scroll-behavior:auto}.next a.card,.btn{transition:none}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <nav aria-label="メイン">
+    <a class="logo" href="#top">🍎 チームドロシー</a>
+    <ul>
+      <li><a href="#next">次回イベント</a></li>
+      <li><a href="#about">想い</a></li>
+      <li><a href="#join">参加する</a></li>
+      <li><a href="#contact">お問い合わせ</a></li>
+    </ul>
+  </nav>
+</div>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="grid">
+      <div class="side">
+        <span class="tag">墨田区｜リアルイベント主催</span>
+        <p>ただの主婦が、「ほしい場所」を自分で作っています。親子で来られるイベントや、大人の対談を、墨田区で開いています。</p>
+        <p class="where">次回は 12月5日(土)</p>
+      </div>
+      <h1 class="vert" aria-label="無いなら作ればいい"><span>無いなら</span><span class="lined">作ればいい</span></h1>
+    </div>
+  </div>
+  <span class="sprout" aria-hidden="true">🌱</span>
+</header>
+
+<section class="next" id="next">
+  <div class="wrap">
+    <h2>次回のイベント</h2>
+    <a class="card" href="https://peatix.com/event/5240542">
+      <div class="date"><div class="m">12月</div><div class="d">5</div><div class="w">土</div></div>
+      <div>
+        <h3>夢は人生を動かす力になる！第2弾<br>自分の生き方を選ぶ、小さな一歩</h3>
+        <p>ゲスト 金子泰之さん / すみだ生涯学習センター ユートリヤ・ドーム / 12:00 開場</p>
+        <span class="go">詳細とお申し込み(Peatix)</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap">
+    <h2>チームドロシーについて</h2>
+    <div class="cols">
+      <div>
+        <p class="big">未来を楽しみにできる日を、墨田区でつくる。</p>
+        <p style="margin-top:22px">行ってみたい場所や、出会いたい人の話が聞ける場が近くにないなら、自分たちでつくればいい。そう考えて、一つずつイベントを開いてきました。</p>
+        <p>挑戦する大人の姿を、子どもたちにも見てほしい。そんな思いで、親子で参加できるかたちを大切にしています。</p>
+      </div>
+      <div class="facts">
+        <div><small>活動エリア</small>東京都墨田区</div>
+        <div><small>主催</small>ドロシーちゃん(ただの主婦)</div>
+        <div><small>開いているイベント</small>親子イベント、対談</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="log">
+  <div class="wrap">
+    <h2>これまでの活動</h2>
+    <p>Instagramのハイライトに、これまでの様子を残しています。</p>
+    <div class="chips">
+      <span class="first">8月23日 初主催イベント</span>
+      <span>デコラ会</span><span>オーダー浴衣</span><span>ミョウバン結晶</span><span>映えスポ</span>
+    </div>
+    <div class="gallery" aria-hidden="true">
+      <div>イベントの写真を<br>入れる場所</div><div>イベントの写真を<br>入れる場所</div><div>イベントの写真を<br>入れる場所</div>
+    </div>
+  </div>
+</section>
+
+<section class="join" id="join">
+  <div class="wrap">
+    <h2>いっしょにつくる</h2>
+    <div class="opts">
+      <div class="opt"><b>参加する</b><p>イベントにお客さんとして来てください。親子での参加も歓迎です。</p></div>
+      <div class="opt"><b>運営を手伝う</b><p>受付や会場案内など、当日の運営を支えてくれる方を募集しています。</p></div>
+      <div class="opt"><b>協力・相談する</b><p>会場の提供や登壇、コラボのご相談はお気軽にどうぞ。</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <h2>お問い合わせ</h2>
+    <p>まずはInstagramのDMか、Peatixの主催者ページからご連絡ください。</p>
+    <div class="btns">
+      <a class="btn" href="https://www.instagram.com/dorothy_chan_sumida/">InstagramでDMする</a>
+      <a class="btn alt" href="https://peatix.com/event/5240542">Peatixで連絡する</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="links">
+    <a href="https://www.instagram.com/dorothy_chan_sumida/">Instagram</a>
+    <a href="https://www.threads.com/@dorothy_chan_sumida">Threads</a>
+    <a href="https://peatix.com/event/5240542">Peatix</a>
+  </div>
+  <p>チームドロシー / 東京都墨田区 ※このページは試作です(非公式)</p>
+</footer>
+</body>
+</html>

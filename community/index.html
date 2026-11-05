@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>挑戦する大人の背中を見せる｜墨田区のドロシーちゃんコミュニティ</title>
+<meta name="description" content="墨田区のドロシーちゃんが始めたコミュニティ。挑戦・応援・感謝の循環をみんなでつくります。月額2,000円。参加はInstagramのDMから。">
+<meta property="og:title" content="挑戦する大人の背中を見せる｜墨田区のドロシーちゃんコミュニティ">
+<meta property="og:image" content="img/post-1.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Reggae+One&family=Zen+Maru+Gothic:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#13a3ee;      /* 髪とポスターの青 */
+  --blue-deep:#0b6aa8;
+  --blue-pale:#e4f4fd;
+  --red:#e3203f;       /* 筆の赤 */
+  --navy:#16233b;      /* ポスターの黒に近い紺 */
+  --white:#fff;
+  --muted:#51627a;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font-family:"Zen Maru Gothic",system-ui,sans-serif;font-weight:500;color:var(--navy);background:#fff;line-height:1.9;font-size:17px;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--red);outline-offset:3px;border-radius:6px}
+.wrap{width:min(100% - 36px,980px);margin-inline:auto}
+section{padding:84px 0;position:relative}
+p+p{margin-top:1.1em}
+
+/* ポスター風の見出し: 太い筆文字+青い筆跡 */
+.brush{font-family:"Reggae One","Zen Maru Gothic",sans-serif;font-weight:400;letter-spacing:.02em}
+h2{font-family:"Reggae One","Zen Maru Gothic",sans-serif;font-weight:400;font-size:clamp(30px,6.2vw,50px);line-height:1.4;margin-bottom:28px}
+h2 .hl{background:linear-gradient(100deg,transparent 0 2%,var(--blue) 2% 98%,transparent 98%);color:#fff;padding:.02em .35em .06em;margin-left:-.2em;-webkit-box-decoration-break:clone;box-decoration-break:clone;display:inline;line-height:1.7}
+h2 .red{color:var(--red)}
+.stroke{color:#fff;-webkit-text-stroke:.14em var(--navy);paint-order:stroke fill}
+
+/* 飾り */
+.spark{position:absolute;width:34px;height:34px;color:#fff;pointer-events:none}
+.heart{position:absolute;width:44px;height:44px;pointer-events:none}
+.zap{position:absolute;pointer-events:none;width:46px;height:46px}
+
+/* ボタン */
+.btn{display:inline-block;background:var(--red);color:#fff;text-decoration:none;font-weight:900;font-size:18px;padding:16px 36px;border-radius:99px;border:4px solid #fff;box-shadow:0 5px 0 #8c0f26,0 0 0 3px var(--navy);transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translateY(2px);box-shadow:0 3px 0 #8c0f26,0 0 0 3px var(--navy)}
+.btn:active{transform:translateY(5px);box-shadow:0 0 0 #8c0f26,0 0 0 3px var(--navy)}
+
+/* ---------- ヒーロー(ポスターの1枚目) ---------- */
+.hero{background:var(--blue);color:#fff;padding:18px 0 0;overflow:hidden;position:relative}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 75% 40%,#5cc6f6 0,transparent 55%);opacity:.9}
+.hero nav{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:center;font-weight:900;font-size:15px}
+.hero nav a{text-decoration:none}
+.hero .grid{position:relative;z-index:1;display:grid;grid-template-columns:1.25fr .75fr;gap:20px;align-items:end;padding-top:30px}
+.hero .copy{padding-bottom:140px}
+.hero h1{font-family:"Reggae One",sans-serif;font-weight:400;font-size:clamp(32px,7.2vw,68px);line-height:1.25;letter-spacing:.02em}
+.hero h1 .stroke{display:block;white-space:nowrap}
+.hero .kicker{font-weight:900;font-size:15px;display:inline-block;background:#fff;color:var(--blue-deep);padding:2px 16px;border-radius:99px;margin-bottom:12px}
+.hero .lead{font-weight:700;margin-top:20px;max-width:27em}
+.banner{display:inline-block;margin-top:24px;background:var(--red);color:#fff;font-family:"Reggae One",sans-serif;font-size:clamp(22px,4.4vw,34px);line-height:1.3;padding:8px 30px 10px 26px;transform:rotate(-2deg);
+  clip-path:polygon(0 8%,3% 0,22% 6%,48% 0,76% 5%,100% 0,98% 55%,100% 100%,74% 94%,50% 100%,24% 95%,3% 100%,0 60%);box-shadow:0 0 0 3px #fff}
+.hero .price{margin-top:20px;font-weight:900;font-size:17px}
+.hero .btn{margin-top:14px}
+.hero figure{position:relative;align-self:end}
+.hero figure::before{content:"";position:absolute;left:4%;right:-4%;bottom:0;height:78%;background:#fff;border-radius:46% 54% 0 0/18% 22% 0 0;transform:rotate(-4deg);opacity:.2}
+.hero figure img{display:block;position:relative;width:100%;max-width:480px;margin-inline:auto;aspect-ratio:620/894;object-fit:cover;object-position:50% 0;-webkit-mask:linear-gradient(#000 82%,transparent);mask:linear-gradient(#000 82%,transparent)}
+.hero .wave{position:absolute;left:-5%;right:-5%;bottom:-2px;height:70px;background:#fff;clip-path:polygon(0 60%,12% 40%,28% 62%,46% 36%,64% 60%,82% 38%,100% 58%,100% 100%,0 100%);z-index:2}
+@media (max-width:780px){.hero>.spark,.hero>.heart,.hero>.zap{display:none}.hero .grid{grid-template-columns:1fr}.hero .copy{padding-bottom:10px}.hero figure img{max-width:340px;margin-bottom:20px}}
+
+/* ---------- 想い+循環 ---------- */
+.cycle{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin:36px 0 6px}
+.cycle .node{background:var(--blue-pale);border:4px solid var(--navy);border-radius:26px;padding:22px 18px;text-align:center;position:relative;box-shadow:6px 6px 0 var(--blue)}
+.cycle .node b{display:block;font-family:"Reggae One",sans-serif;font-weight:400;font-size:38px;line-height:1.3;color:var(--blue-deep)}
+.cycle .node p{font-size:15px;font-weight:700;color:var(--muted);line-height:1.7;margin-top:6px}
+.cycle .node:not(:last-of-type)::after{content:"";position:absolute;right:-30px;top:50%;border-left:20px solid var(--red);border-top:13px solid transparent;border-bottom:13px solid transparent;transform:translateY(-50%);z-index:2}
+.cycle .node:not(:first-of-type){margin-left:34px}
+.cycle .back{grid-column:1/-1;text-align:center;font-family:"Reggae One",sans-serif;font-size:22px;color:var(--red);margin-top:22px}
+@media (max-width:700px){
+  .cycle{grid-template-columns:1fr;gap:30px}
+  .cycle .node:not(:first-of-type){margin-left:0}
+  .cycle .node:not(:last-of-type)::after{right:auto;left:50%;top:auto;bottom:-30px;transform:translateX(-50%) rotate(90deg)}
+}
+
+/* ---------- 告知スワイプ ---------- */
+.posts{background:var(--blue-pale);overflow:hidden}
+.posts .lead{margin-bottom:22px;font-weight:700}
+.slider{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:8px 18px 28px;margin-inline:-18px;scrollbar-width:thin}
+.slider figure{flex:0 0 min(78vw,360px);scroll-snap-align:center}
+.slider img{display:block;width:100%;aspect-ratio:1;object-fit:cover;border-radius:20px;border:5px solid #fff;box-shadow:6px 7px 0 var(--navy)}
+.slider figcaption{font-size:13px;font-weight:700;color:var(--muted);text-align:center;margin-top:12px}
+@media (min-width:1000px){.slider{margin-inline:0;padding-inline:4px}}
+
+/* ---------- 特典 ---------- */
+.benefit .grid{display:grid;grid-template-columns:.95fr 1.25fr;gap:30px;align-items:start}
+.plan{background:var(--blue);color:#fff;border-radius:28px;padding:30px 28px;position:sticky;top:20px;border:5px solid var(--navy);box-shadow:8px 8px 0 var(--navy);overflow:hidden}
+.plan small{font-weight:900;font-size:16px}
+.plan .yen{font-family:"Reggae One",sans-serif;font-size:76px;line-height:1.1;margin:6px 0;-webkit-text-stroke:.06em var(--navy);paint-order:stroke fill}
+.plan .yen span{font-size:24px}
+.plan p{font-weight:700;font-size:15px;line-height:1.8}
+.perks{list-style:none;padding:0;display:grid;gap:16px}
+.perks li{display:grid;grid-template-columns:54px 1fr;gap:16px;align-items:start;background:#fff;border:4px solid var(--navy);border-radius:22px;padding:18px 22px;box-shadow:5px 5px 0 var(--blue-pale)}
+.perks .ic{width:54px;height:54px;border-radius:50%;background:var(--blue);display:grid;place-items:center;font-size:26px;border:3px solid var(--navy)}
+.perks b{display:block;font-weight:900;font-size:19px;line-height:1.5}
+.perks b i{font-style:normal;background:var(--red);color:#fff;border-radius:99px;font-size:13px;padding:1px 12px;margin-left:8px;white-space:nowrap}
+.perks span{font-size:14px;color:var(--muted);font-weight:700;line-height:1.7;display:block}
+@media (max-width:780px){.benefit .grid{grid-template-columns:1fr}.plan{position:static}}
+
+/* ---------- 活動 ---------- */
+.works{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.work{background:#fff;border:4px solid var(--navy);border-radius:24px;overflow:hidden;display:flex;flex-direction:column;box-shadow:6px 6px 0 var(--blue)}
+.work .ph{aspect-ratio:4/3;background:repeating-linear-gradient(45deg,var(--blue-pale) 0 12px,#fff 12px 24px);position:relative;display:grid;place-items:center;font-size:12px;font-weight:700;color:var(--muted);text-align:center}
+.work .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.work .ph.top img{object-position:50% 14%}
+.work .ph.face img{object-position:50% 20%}
+.work .body{padding:16px 20px 22px}
+.work .when{font-size:13px;font-weight:900;color:#fff;background:var(--red);border-radius:99px;padding:0 12px;display:inline-block}
+.work h3{font-weight:900;font-size:19px;line-height:1.5;margin:6px 0 6px}
+.work p{font-size:14px;color:var(--muted);font-weight:700;line-height:1.8;margin:0}
+.works-note{margin-top:22px;font-size:14px;color:var(--muted);font-weight:700}
+.works-note a{color:var(--red);font-weight:900}
+@media (max-width:860px){.works{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.works{grid-template-columns:1fr}}
+
+/* ---------- 共感(ポスターの黒い面) ---------- */
+.voices{background:var(--navy);color:#fff;overflow:hidden}
+.voices h2 .hl{background:linear-gradient(100deg,transparent 0 2%,var(--red) 2% 98%,transparent 98%)}
+.bubbles{display:grid;gap:16px;margin:26px 0 32px}
+.bubbles p{margin:0;width:fit-content;max-width:100%;background:#fff;color:var(--navy);font-weight:900;font-size:20px;padding:14px 28px;border-radius:28px 28px 28px 6px;border:4px solid var(--blue)}
+.bubbles p:nth-child(2){margin-left:clamp(0px,9vw,70px);border-radius:28px 28px 6px 28px;border-color:var(--red)}
+.voices .ans{font-weight:700;font-size:19px;max-width:32em}
+.voices .ans strong{color:#8fd8fb;font-weight:900}
+
+/* ---------- ドロシー ---------- */
+.about .row{display:grid;grid-template-columns:.85fr 1.15fr;gap:42px;align-items:center}
+.about .pic{position:relative}
+.about .pic img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:62% 38%;border-radius:22px;border:5px solid var(--navy);box-shadow:9px 9px 0 var(--blue)}
+.about .pic .sticker{position:absolute;right:-12px;bottom:18px;transform:rotate(-5deg)}
+.about .big{font-family:"Reggae One",sans-serif;font-size:clamp(26px,4.6vw,38px);line-height:1.55;margin-bottom:16px}
+.about .big span{color:var(--red)}
+@media (max-width:780px){.about .row{grid-template-columns:1fr}.about .pic{max-width:340px}}
+
+/* ---------- 運営メンバー ---------- */
+.staff{background:var(--red);color:#fff;overflow:hidden}
+.staff::before{content:"";position:absolute;inset:0;background:repeating-conic-gradient(from 0deg at 85% 30%,#ffffff12 0 6deg,transparent 6deg 12deg)}
+.staff .cols{position:relative;display:grid;grid-template-columns:1.15fr 1fr;gap:36px;align-items:center}
+.staff h2 .hl{background:linear-gradient(100deg,transparent 0 2%,var(--navy) 2% 98%,transparent 98%)}
+.staff img.poster{display:block;width:min(100%,300px);aspect-ratio:4/5;object-fit:cover;object-position:50% 52%;border-radius:18px;border:5px solid #fff;margin-top:24px;transform:rotate(-2.5deg);box-shadow:7px 8px 0 var(--navy)}
+.staff .card{background:#fff;color:var(--navy);border-radius:26px;padding:28px 28px 30px;border:5px solid var(--navy);box-shadow:8px 8px 0 var(--navy)}
+.staff .card b{font-family:"Reggae One",sans-serif;font-weight:400;font-size:30px;display:block;color:var(--red);line-height:1.4}
+.staff .card dl{display:grid;grid-template-columns:auto 1fr;gap:6px 16px;margin-top:12px;font-weight:700;font-size:16px}
+.staff .card dt{color:var(--muted)}
+.staff .card dd{margin:0;font-weight:900}
+.staff .card .btn{margin-top:20px}
+@media (max-width:780px){.staff .cols{grid-template-columns:1fr}}
+
+/* ---------- 参加方法 ---------- */
+.steps{list-style:none;padding:0;counter-reset:s;display:grid;gap:18px;margin-top:8px}
+.steps li{counter-increment:s;position:relative;background:var(--blue-pale);border:4px solid var(--navy);border-radius:24px;padding:20px 24px 22px 86px}
+.steps li::before{content:counter(s);position:absolute;left:20px;top:50%;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;background:var(--blue);color:#fff;font-family:"Reggae One",sans-serif;font-size:26px;display:grid;place-items:center;border:3px solid var(--navy)}
+.steps b{font-weight:900;font-size:19px;display:block}
+.steps span{font-size:15px;color:var(--muted);font-weight:700}
+.keys{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+.keys i{font-style:normal;background:#fff;border:3px solid var(--blue);border-radius:99px;padding:0 20px;font-weight:900;color:var(--blue-deep);font-size:18px}
+.keys i:nth-child(2){border-color:var(--red);color:var(--red)}
+
+footer{background:var(--blue);color:#fff;text-align:center;padding:70px 0 80px;position:relative;overflow:hidden}
+footer .final{font-family:"Reggae One",sans-serif;font-size:clamp(30px,6.6vw,52px);line-height:1.4}
+footer .links{margin:28px 0 0;display:flex;gap:22px;justify-content:center;flex-wrap:wrap;font-weight:700;font-size:15px}
+footer small{display:block;margin-top:24px;opacity:.9;font-size:12px}
+
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:5;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-top:3px solid var(--navy);display:none}
+.sticky .btn{display:block;text-align:center;padding:12px;margin:0;font-size:17px}
+@media (max-width:700px){.sticky{display:block}body{padding-bottom:84px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+</style>
+</head>
+<body>
+
+<!-- 飾り用のSVG(きらめき・ハート・勢いの線) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="spark" viewBox="0 0 40 40"><path d="M20 2 L24 16 L38 20 L24 24 L20 38 L16 24 L2 20 L16 16 Z" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/></symbol>
+  <symbol id="heart" viewBox="0 0 44 44"><path d="M22 38 C8 28 4 18 10 12 C15 7 21 10 22 15 C24 8 32 6 36 12 C40 19 34 29 22 38 Z" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/></symbol>
+  <symbol id="zap" viewBox="0 0 46 46"><path d="M4 24 L16 20 M8 38 L18 30 M22 6 L22 18" stroke="currentColor" stroke-width="4" stroke-linecap="round" fill="none"/></symbol>
+</svg>
+
+<header class="hero">
+  <svg class="spark" style="left:6%;top:30%" aria-hidden="true"><use href="#spark"/></svg>
+  <svg class="spark" style="right:8%;top:14%;width:26px;height:26px" aria-hidden="true"><use href="#spark"/></svg>
+  <svg class="heart" style="right:44%;top:46%;color:#fff" aria-hidden="true"><use href="#heart"/></svg>
+  <svg class="zap" style="right:6%;top:42%;color:var(--red)" aria-hidden="true"><use href="#zap"/></svg>
+  <div class="wrap">
+    <nav aria-label="メイン">
+      <a href="#top">🍎 墨田区のドロシーちゃん</a>
+      <a href="#join">参加方法</a>
+    </nav>
+    <div class="grid" id="top">
+      <div class="copy">
+        <span class="kicker">墨田区｜コミュニティ会員募集</span>
+        <h1><span class="stroke">挑戦する大人の</span><span class="stroke">背中を見せる</span></h1>
+        <p class="lead">私が挑戦すると、応援してくれる人が現れた。今度は私が応援したい。そんな「挑戦・応援・感謝」の循環を、みんなでつくるコミュニティです。</p>
+        <span class="banner">コミュニティ始めました！</span>
+        <p class="price">月額 2,000円 ／ 毎月のランチ会は参加費無料</p>
+        <a class="btn" href="https://ig.me/m/dorothy_chan_sumida">DMで参加を伝える</a>
+      </div>
+      <figure>
+        <img src="img/dorothy-notext.jpg" alt="青いツインテールのドロシーちゃん。上を見上げる横顔" width="620" height="894">
+      </figure>
+    </div>
+  </div>
+  <div class="wave"></div>
+</header>
+
+<section>
+  <div class="wrap">
+    <h2><span class="hl">応援する人が、</span><br>応援される人になる</h2>
+    <p>誰かの挑戦を応援しているうちに、自分もやってみたくなる。そうして始めた挑戦を、また誰かが応援してくれる。ドロシーちゃんが自分のイベントで体験したこの流れを、コミュニティにしました。</p>
+    <div class="cycle">
+      <div class="node"><b>挑戦</b><p>小さな一歩でいい。やってみたいことを口にする</p></div>
+      <div class="node"><b>応援</b><p>誰かの挑戦を、見に行く・手伝う・拡げる</p></div>
+      <div class="node"><b>感謝</b><p>「ありがとう」が届いて、次はこちらも挑戦したくなる</p></div>
+      <p class="back">そして、また挑戦へ！</p>
+    </div>
+  </div>
+</section>
+
+<section class="posts">
+  <div class="wrap">
+    <h2><span class="hl">投稿を見る</span></h2>
+    <p class="lead">Instagramで告知した内容です。横にスワイプして読めます。</p>
+  </div>
+  <div class="wrap">
+    <div class="slider" tabindex="0" aria-label="Instagramの告知画像(横にスクロール)">
+      <figure><img src="img/post-1.jpg" alt="挑戦・応援・感謝の循環をつくりたい" loading="lazy"><figcaption>1 / 5</figcaption></figure>
+      <figure><img src="img/post-2.jpg" alt="コミュニティ会費は月額2,000円。ランチ会は無料、交流イベントは会員価格" loading="lazy"><figcaption>2 / 5</figcaption></figure>
+      <figure><img src="img/post-3.jpg" alt="12月5日、ドロシーちゃんとイベントをつくろう" loading="lazy"><figcaption>3 / 5</figcaption></figure>
+      <figure><img src="img/post-4.jpg" alt="気になった人はDMください" loading="lazy"><figcaption>4 / 5</figcaption></figure>
+      <figure><img src="img/post-5.jpg" alt="一緒に楽しんで、挑戦しよう" loading="lazy"><figcaption>5 / 5</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="benefit" id="benefit">
+  <svg class="spark" style="right:6%;top:50px;color:var(--blue)" aria-hidden="true"><use href="#spark"/></svg>
+  <div class="wrap">
+    <h2>会員になると、<br><span class="hl">こんなことができます</span></h2>
+    <div class="grid">
+      <div class="plan">
+        <small>コミュニティ会費</small>
+        <div class="yen">2,000<span>円 / 月</span></div>
+        <p>毎月のランチ会は参加費無料(飲食代は実費)。交流イベントは会員価格、登壇の場は3か月に1回。</p>
+      </div>
+      <ul class="perks">
+        <li><span class="ic" aria-hidden="true">🍴</span><div><b>毎月のランチ会<i>参加費無料</i></b><span>ドロシーちゃんや仲間と顔を合わせる場。飲食代は実費です。</span></div></li>
+        <li><span class="ic" aria-hidden="true">💬</span><div><b>毎月2回以上の交流イベント<i>会員価格</i></b><span>ものづくり、勉強会、おしゃべり会など。会員価格で参加できます。</span></div></li>
+        <li><span class="ic" aria-hidden="true">🎤</span><div><b>3か月に1回の登壇イベント<i>出店・登壇が無料</i></b><span>ブース出店やチャレンジ登壇が無料です。希望者が多い場合は抽選になります。</span></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--blue-pale)">
+  <div class="wrap">
+    <h2>これまで、<span class="hl">こんな場</span>をつくってきました</h2>
+    <div class="works">
+      <article class="work">
+        <div class="ph face"><img src="img/dorothy-order.jpg" alt="着物姿のチェルシーさんと並ぶドロシーちゃん" loading="lazy" onerror="this.remove()">写真を入れる場所</div>
+        <div class="body"><span class="when">10月8日(木)</span><h3>チェルシーさんとランチ会</h3><p>参加費は不要で、ランチ代のみ。洋裁職人のチェルシーさんと、ゆっくり話せる回。和裁クラブの見学も可でした。</p></div>
+      </article>
+      <article class="work">
+        <div class="ph top"><img src="img/dorothy-chinese.jpg" alt="中国語勉強会の告知ポスター" loading="lazy" onerror="this.remove()">写真を入れる場所</div>
+        <div class="body"><span class="when">10月28日</span><h3>中国語勉強会</h3><p>マキコ先生とヤンピン先生と一緒に、中国語に触れて交流する会。初めての方も歓迎。ユートリヤで開きました。</p></div>
+      </article>
+      <article class="work">
+        <div class="ph"><img src="img/dorothy-utoriya.jpg" alt="ユートリヤで作業するドロシーちゃん" loading="lazy" onerror="this.remove()">写真を入れる場所</div>
+        <div class="body"><span class="when">交流会</span><h3>初めての動画編集交流会</h3><p>プロカメラマンのなつみさんに応援してもらって開いた回。一人ではできないことも、出会ったらできることが増えます。</p></div>
+      </article>
+      <article class="work">
+        <div class="ph"><span>写真を入れる場所</span></div>
+        <div class="body"><span class="when">9月21日(月・祝)</span><h3>あみもの倶楽部</h3><p>上手に編むことより、おしゃべりしながらのんびり手を動かす会。会場はユートリヤ3階の茶室でした。</p></div>
+      </article>
+      <article class="work">
+        <div class="ph top"><img src="img/dorothy-event-1205.jpg" alt="12月5日開催の告知。ゲスト登壇は金子泰之さん" loading="lazy" onerror="this.remove()">写真を入れる場所</div>
+        <div class="body"><span class="when">12月5日(土)</span><h3>夢は人生を動かす力になる！第2弾</h3><p>ゲストは金子泰之さん。コミュニティの運営メンバーもこのイベントをつくります。</p></div>
+      </article>
+      <article class="work">
+        <div class="ph"><img src="img/dorothy-stage.jpg" alt="ステージで話すドロシーちゃん" loading="lazy" style="object-position:62% 35%" onerror="this.remove()">写真を入れる場所</div>
+        <div class="body"><span class="when">9月</span><h3>夢だった舞台に立ちました</h3><p>「無いなら、作ればいい。夢は叶う。叶い続ける」。ドロシーちゃん自身の挑戦です。</p></div>
+      </article>
+    </div>
+    <p class="works-note">ほかにも、台風の日のZoom交流会など。くわしくは<a href="https://www.instagram.com/dorothy_chan_sumida/">Instagram</a>のハイライトへ。</p>
+  </div>
+</section>
+
+<section class="voices">
+  <svg class="spark" style="left:5%;top:44px;color:#fff" aria-hidden="true"><use href="#spark"/></svg>
+  <div class="wrap">
+    <h2>こんな気持ちでも、<br><span class="hl">大丈夫</span>です</h2>
+    <div class="bubbles">
+      <p>私なんかに何ができる？</p>
+      <p>やりたいことが、まだ分からない</p>
+    </div>
+    <p class="ans">そんな方も、まずは会いに来てください。<strong>誰かの挑戦を応援しているうちに、自分もやってみたくなるかもしれません。</strong>一緒に、小さな一歩を楽しみましょう。</p>
+  </div>
+</section>
+
+<section class="about">
+  <div class="wrap row">
+    <div class="pic">
+      <img src="img/dorothy-community.jpg" alt="手を振るドロシーちゃん" loading="lazy" style="object-position:50% 46%">    </div>
+    <div>
+      <h2 style="margin-bottom:16px"><span class="hl">ドロシーちゃんより</span></h2>
+      <p class="big">働く場所が無いなら、仕事をつくる。<br>見たい景色が無いなら、<span>自分でつくる。</span></p>
+      <p>墨田区で、親子イベントや交流会を自分で開いてきました。「無いなら、作ればいい」。ただの主婦の挑戦を、そばで見ていてください。そして気が向いたら、一緒に挑戦しましょう。</p>
+    </div>
+  </div>
+</section>
+
+<section class="staff">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <h2>12月5日の<br><span class="hl">運営メンバー</span>も募集中</h2>
+        <p>どうしたら、来場する方も私たち自身も楽しめる？ 一緒に考えて、動いて、イベントをつくりませんか。「いつか自分でもイベントを開いてみたい」という方にもおすすめです。</p>
+        <img class="poster" src="img/dorothy-event-1205.jpg" alt="12月5日開催の告知。ゲスト登壇は金子泰之さん" loading="lazy" onerror="this.remove()">
+      </div>
+      <div class="card">
+        <b>運営メンバー 限定10名</b>
+        <dl><dt>一般</dt><dd>1,500円</dd><dt>会員</dt><dd>1,000円</dd><dt>申込</dt><dd>DMで「スタッフ」</dd></dl>
+        <a class="btn" href="https://ig.me/m/dorothy_chan_sumida">DMで「スタッフ」と送る</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="join">
+  <div class="wrap">
+    <h2>参加は、<span class="hl">DM</span>からどうぞ</h2>
+    <ol class="steps">
+      <li><b>InstagramでDMを送る</b><span>気になるものを書いてください。</span>
+        <div class="keys"><i>コミュニティ</i><i>スタッフ</i><i>どっちも！</i></div></li>
+      <li><b>ドロシー本人から返信が届く</b><span>すべて、ドロシー本人が心を込めて返信します。</span></li>
+      <li><b>ランチ会や交流会で会いましょう</b><span>まずは会いに来てください。</span></li>
+    </ol>
+    <p style="margin-top:30px"><a class="btn" href="https://ig.me/m/dorothy_chan_sumida">DMで参加を伝える</a></p>
+  </div>
+</section>
+
+<footer>
+  <svg class="spark" style="left:10%;top:40px" aria-hidden="true"><use href="#spark"/></svg>
+  <svg class="heart" style="right:10%;top:50px;color:#fff" aria-hidden="true"><use href="#heart"/></svg>
+  <div class="wrap">
+    <p class="final"><span class="stroke">一緒に楽しんで、</span><br><span class="stroke">挑戦しよう！</span></p>
+    <div class="links">
+      <a href="https://www.instagram.com/dorothy_chan_sumida/">Instagram</a>
+      <a href="https://www.threads.com/@dorothy_chan_sumida">Threads</a>
+      <a href="https://peatix.com/event/5240542">Peatix(12/5イベント)</a>
+    </div>
+    <small>※このページは試作です(非公式)。コミュニティの名前はまだ決まっていません。</small>
+  </div>
+</footer>
+
+<div class="sticky"><a class="btn" href="https://ig.me/m/dorothy_chan_sumida">DMで参加を伝える</a></div>
+</body>
+</html>
